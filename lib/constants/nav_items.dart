@@ -1,7 +1,17 @@
+import 'package:flutter/material.dart';
+
 List<String> headTitle = [
   "Home",
-  "Skills",
+  "About",
   "Projects",
-  "Blog",
   "Contact",
+  "Resume",
+];
+
+List<IconData> navIcons = [
+  Icons.home,
+  Icons.android_outlined,
+  Icons.back_hand,
+  Icons.web,
+  Icons.quick_contacts_mail,
 ];
