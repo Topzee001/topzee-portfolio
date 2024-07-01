@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 //import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/nav_items.dart';
+import 'package:my_portfolio/widgets/main_mobile.dart';
 // import 'package:my_portfolio/widgets/logo.dart';
 
 // import '../constants/Nav_items.dart';
@@ -51,98 +52,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   onLogoTap: () {},
                 ),
+              if (Constraints.maxWidth >= kMinDesktopWidth)
+                const MainDesktop()
+              else
+                const MainMobile(),
 
-              // const MainDesktop(),
-              Container(
-                height: screenHeight,
-                constraints: BoxConstraints(minHeight: 560.0),
-                child: Column(
-                  //   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    //avartar image
-                    ShaderMask(
-                      shaderCallback: (bounds) {
-                        return LinearGradient(colors: [
-                          CustomColor.scaffoldBg.withOpacity(0.8),
-                          CustomColor.scaffoldBg.withOpacity(0.9),
-                        ]).createShader(bounds);
-                      },
-                      child: Image.asset(
-                        "assets/avatar.png",
-                        width: screenWidth,
-                      ),
-                    ),
-                    //texts
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Hi, my name is",
-                          style: TextStyle(
-                            height: 1.5,
-                            fontSize: 24,
-                            // fontWeight: FontWeight.bold,
-                            color: CustomColor.whitePrmary,
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          "Ibrahim Temitope",
-                          style: TextStyle(
-                            height: 1.5,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: CustomColor.whitePrmary,
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Row(
-                          children: [
-                            Icon(Icons.phone_android),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "Mobile Developer",
-                              style: TextStyle(
-                                //height: 1.5,
-                                fontSize: 18,
-                                //fontWeight: FontWeight.bold,
-                                color: CustomColor.whitePrmary,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          "With extensive experience in Mobile development, building apps\nthat follows the best practice to deliver over the top user\nexperience. Open to working on products that will eat the world",
-                          style: TextStyle(
-                            // height: 1.5,
-                            fontSize: 15,
-                            //fontWeight: FontWeight.bold,
-                            color: CustomColor.whitePrmary,
-                          ),
-                          textAlign: TextAlign.justify,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    SizedBox(
-                      width: 300,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: CustomColor.greenPrimary,
-                        ),
-                        onPressed: () {},
-                        child: Text("Hire me"),
-                      ),
-                    )
-                  ],
-                ),
-              ),
               //skills
               Container(
                 height: 500,

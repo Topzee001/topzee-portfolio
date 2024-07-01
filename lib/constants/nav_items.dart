@@ -10,8 +10,8 @@ List<String> headTitle = [
 
 List<IconData> navIcons = [
   Icons.home,
-  Icons.android_outlined,
-  Icons.back_hand,
-  Icons.web,
-  Icons.quick_contacts_mail,
+  Icons.info,
+  Icons.apps,
+  Icons.contact_phone,
+  Icons.description,
 ];
