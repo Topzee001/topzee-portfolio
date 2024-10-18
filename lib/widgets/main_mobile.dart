@@ -11,9 +11,9 @@ class MainMobile extends StatelessWidget {
     final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
+      margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
       height: screenHeight,
-      constraints: BoxConstraints(minHeight: 560.0),
+      constraints: const BoxConstraints(minHeight: 560.0),
       child: Column(
         //   mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -31,11 +31,11 @@ class MainMobile extends StatelessWidget {
           //   ),
           // ),
           Image.asset(
-            "assets/avatar.png",
+            "assets/ibro.jpeg",
             width: screenWidth,
           ),
           //texts
-          Column(
+          const Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -99,7 +99,7 @@ class MainMobile extends StatelessWidget {
                 backgroundColor: CustomColor.greenPrimary,
               ),
               onPressed: () {},
-              child: Text("Hire me"),
+              child: const Text("Hire me"),
             ),
           )
         ],
