@@ -17,24 +17,23 @@ class MainMobile extends StatelessWidget {
       child: Column(
         //   mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          //avartar image
-          // ShaderMask(
-          //   shaderCallback: (bounds) {
-          //     return LinearGradient(colors: [
-          //       CustomColor.scaffoldBg.withOpacity(0.8),
-          //       CustomColor.scaffoldBg.withOpacity(0.9),
-          //     ]).createShader(bounds);
-          //   },
-          //   child: Image.asset(
-          //     "assets/avatar.png",
-          //     width: screenWidth,
-          //   ),
-          // ),
-          Image.asset(
-            "assets/ibro.jpeg",
-            width: screenWidth,
+          CircleAvatar(
+            radius: screenHeight * 0.15,
+            backgroundColor:
+                // Colors.red,
+                CustomColor.scaffoldBg,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(screenHeight * 0.15),
+              child: Image.asset(
+                "assets/emote.jpeg",
+                height:
+                    screenWidth < 700 ? screenHeight * 0.3 : screenHeight * 0.3,
+              ),
+            ),
           ),
-          //texts
+          const SizedBox(
+            height: 20,
+          ),
           const Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,

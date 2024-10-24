@@ -9,7 +9,6 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      
       backgroundColor: CustomColor.scaffoldBg,
       child: ListView(
         children: [
@@ -25,13 +24,13 @@ class MyDrawer extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                icon: Icon(Icons.close),
+                icon: const Icon(Icons.close),
               ),
             ),
           ),
           for (int i = 0; i < navIcons.length; i++)
             ListTile(
-              contentPadding: EdgeInsets.symmetric(horizontal: 30),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 30),
               titleTextStyle: const TextStyle(
                 color: CustomColor.whitePrmary,
                 fontWeight: FontWeight.w600,

@@ -12,3 +12,5 @@ BoxDecoration kAppbarDecoration = BoxDecoration(
   ),
   borderRadius: BorderRadius.circular(100),
 );
+
+const Color darKLightNavy = Color(0xFF112240);

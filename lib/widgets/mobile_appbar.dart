@@ -18,10 +18,10 @@ class MymobileBar extends StatelessWidget {
         children: [
           IconButton(
             onPressed: onMenuTap,
-            icon: Icon(Icons.menu),
+            icon: const Icon(Icons.menu),
           ),
-          SizedBox(width: 15),
-          Spacer(),
+          const SizedBox(width: 15),
+          const Spacer(),
           MyLogo(
             onTap: onLogoTap,
           ),

@@ -88,8 +88,11 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_portfolio/Sections/About/components.dart';
 import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/widgets/main_mobile.dart';
+import '../Sections/About/about_desktop.dart';
 import '../constants/size.dart';
 import '../widgets/desk_appbar.dart';
 import '../widgets/drawer_mobile.dart';
@@ -108,8 +111,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
+    final screenHeight = screenSize.height;
     return LayoutBuilder(
       builder: (context, constraints) {
+        final isNarrow = constraints.maxWidth < 1230;
         final isDesktop = constraints.maxWidth >= kMinDesktopWidth;
         return Scaffold(
           key: scaffoldKey,
@@ -134,24 +141,23 @@ class _MyHomePageState extends State<MyHomePage> {
                         const MainDesktop()
                       else
                         const MainMobile(),
-                      Container(
-                        height: 500,
-                        width: double.infinity,
-                        color: Colors.blueGrey,
-                        child: const Center(child: Text('Skills Section')),
-                      ),
-                      Container(
+                      //about section
+                      const AboutDesktop(),
+                      //projects
+                      SizedBox(
                         height: 500,
                         width: double.infinity,
                         child: const Center(child: Text('Projects Section')),
                       ),
+                      //contacts
                       Container(
                         height: 500,
                         width: double.infinity,
-                        color: Colors.blueGrey,
+                        color: CustomColor.bgLight1,
                         child: const Center(child: Text('Contacts Section')),
                       ),
-                      Container(
+                      //footer
+                      SizedBox(
                         height: 500,
                         width: double.infinity,
                         child: const Center(child: Text('Footer Section')),

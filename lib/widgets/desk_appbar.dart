@@ -12,7 +12,7 @@ class MyDeskbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       height: 60,
       width: double.maxFinite,
       decoration: kAppbarDecoration,
@@ -29,7 +29,7 @@ class MyDeskbar extends StatelessWidget {
                 onPressed: () {},
                 child: Text(
                   headTitle[i],
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                       color: CustomColor.whitePrmary),
