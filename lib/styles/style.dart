@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
+import '../components/colors.dart';
 
 BoxDecoration kAppbarDecoration = BoxDecoration(
   gradient: const LinearGradient(

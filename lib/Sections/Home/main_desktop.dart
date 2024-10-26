@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../constants/colors.dart';
-import '../constants/tooltech.dart';
+import '../../components/colors.dart';
+import '../../components/tooltech.dart';
 
 class MainDesktop extends StatelessWidget {
   const MainDesktop({super.key});
@@ -82,8 +82,9 @@ class MainDesktop extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: CustomColor.greenPrimary,
                           ),
-                          onPressed: () {
-                            launchURL("mailto:ibrahimsakariyaha@gmail.com");
+                          onPressed: () async {
+                            await launchUrlString(
+                                "mailto:ibrahimsakariyaha@gmail.com");
                           },
                           child: const Text("Hire me"),
                         ),

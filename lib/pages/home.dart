@@ -89,14 +89,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:my_portfolio/Sections/About/components.dart';
-import 'package:my_portfolio/constants/colors.dart';
-import 'package:my_portfolio/widgets/main_mobile.dart';
+import 'package:my_portfolio/components/components.dart';
+import 'package:my_portfolio/components/colors.dart';
+import 'package:my_portfolio/Sections/Home/main_mobile.dart';
+import '../Sections/About/aboutMobile.dart';
 import '../Sections/About/about_desktop.dart';
-import '../constants/size.dart';
+import '../components/size.dart';
 import '../widgets/desk_appbar.dart';
 import '../widgets/drawer_mobile.dart';
-import '../widgets/main_desktop.dart';
+import '../Sections/Home/main_desktop.dart';
 import '../widgets/mobile_appbar.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -142,7 +143,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       else
                         const MainMobile(),
                       //about section
-                      const AboutDesktop(),
+                      //const AboutDesktop(),
+                      const AboutMobile(),
                       //projects
                       SizedBox(
                         height: 500,

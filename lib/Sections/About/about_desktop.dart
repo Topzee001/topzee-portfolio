@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:my_portfolio/Sections/About/components.dart';
+import 'package:my_portfolio/components/components.dart';
 
-import '../../constants/colors.dart';
+import '../../components/colors.dart';
+import 'skills.dart';
 
 class AboutDesktop extends StatelessWidget {
   const AboutDesktop({super.key});
@@ -37,10 +38,11 @@ class AboutDesktop extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('- ABOUT ME -'),
-            const Text(
-              'Get to know me',
-              style: TextStyle(fontSize: 18),
+            const CustomHeader(
+              text: 'About',
+            ),
+            const CustomSubheader(
+              text: 'Get to know me',
             ),
             //profile section
             const SizedBox(height: 24),
@@ -141,31 +143,18 @@ class AboutDesktop extends StatelessWidget {
                 SizedBox(
                   height: screenHeight * 0.02,
                 ),
-                const Text("Technologies I've worked with"),
+                Text(
+                  "Technologies I've worked with",
+                  style: TextStyle(
+                    fontSize: screenWidth < 1230
+                        ? screenWidth * 0.02
+                        : screenWidth * 0.015,
+                  ),
+                ),
                 const SizedBox(
                   height: 10,
                 ),
-                ConstrainedBox(
-                  constraints: const BoxConstraints(
-                      // maxWidth: 500,
-                      ),
-                  child: Center(
-                    child: Wrap(
-                      spacing: 10.0,
-                      runSpacing: 10.0,
-                      children: [
-                        for (int i = 0; i < technologies.length; i++)
-                          Chip(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 12, horizontal: 16),
-                            label: Text(technologies[i]["title"]),
-                            avatar: getImage(technologies[i]["img"]),
-                            backgroundColor: CustomColor.bgLight2,
-                          )
-                      ],
-                    ),
-                  ),
-                ),
+                const Skills(),
                 SizedBox(
                   height: screenHeight * 0.02,
                 ),

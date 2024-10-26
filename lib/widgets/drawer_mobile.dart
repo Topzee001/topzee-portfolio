@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
-import '../constants/nav_items.dart';
+import '../components/colors.dart';
+import '../components/nav_items.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});

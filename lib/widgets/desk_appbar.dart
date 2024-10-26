@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 //import 'package:google_fonts/google_fonts.dart';
 
-import '../constants/colors.dart';
-import '../constants/nav_items.dart';
+import '../components/colors.dart';
+import '../components/nav_items.dart';
 import '../styles/style.dart';
 import 'logo.dart';
 
