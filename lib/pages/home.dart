@@ -89,11 +89,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_portfolio/Sections/portfolio/model.dart';
 import 'package:my_portfolio/components/components.dart';
 import 'package:my_portfolio/components/colors.dart';
 import 'package:my_portfolio/Sections/Home/main_mobile.dart';
 import '../Sections/About/aboutMobile.dart';
 import '../Sections/About/about_desktop.dart';
+import '../Sections/portfolio/protfolio_desktop.dart';
 import '../components/size.dart';
 import '../widgets/desk_appbar.dart';
 import '../widgets/drawer_mobile.dart';
@@ -143,14 +145,75 @@ class _MyHomePageState extends State<MyHomePage> {
                       else
                         const MainMobile(),
                       //about section
-                      //const AboutDesktop(),
-                      const AboutMobile(),
+                      if (constraints.maxWidth >= kMedDesktopWidth)
+                        const AboutDesktop()
+                      else
+                        const AboutMobile(),
                       //projects
+                      //const ProtfolioDesktop(),
                       SizedBox(
-                        height: 500,
+                        // height: 500,
                         width: double.infinity,
-                        child: const Center(child: Text('Projects Section')),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: screenWidth * 0.06,
+                                  vertical: screenHeight * 0.02),
+                              child: const Column(
+                                children: [
+                                  CustomHeader(text: "Portfolio"),
+                                  CustomSubheader(
+                                    text:
+                                        'Few of my previous projects are below\n\n',
+                                    // fontSize: screenWidth < 1230
+                                    //     ? screenWidth * 0.015
+                                    //     : screenWidth * 0.04,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: screenWidth > 1200
+                                  ? screenHeight * 0.45
+                                  : screenWidth * 0.21,
+                              child: ListView.separated(
+                                itemBuilder: (context, index) {
+                                  return;
+                                },
+                                separatorBuilder: (context, index) {
+                                  return VerticalDivider(
+                                    color: Colors.transparent,
+                                    width: screenWidth * 0.015,
+                                  );
+                                },
+                                itemCount: personalProjectUtils.length,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
+                      // SizedBox(
+                      //   // height: 500,
+                      //   width: double.infinity,
+                      //   child: Column(
+                      //     children: [
+                      //       SizedBox(
+                      //         height: screenHeight * 0.02,
+                      //       ),
+                      //       Text(
+                      //         "Projects",
+                      //         style: TextStyle(
+                      //           fontSize: screenWidth < 1230
+                      //               ? screenWidth * 0.02
+                      //               : screenWidth * 0.015,
+                      //         ),
+                      //       ),
+                      //     ],
+                      //   ),
+
+                      // ),
                       //contacts
                       Container(
                         height: 500,
@@ -159,10 +222,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: const Center(child: Text('Contacts Section')),
                       ),
                       //footer
-                      SizedBox(
+                      const SizedBox(
                         height: 500,
                         width: double.infinity,
-                        child: const Center(child: Text('Footer Section')),
+                        child: Center(child: Text('Footer Section')),
                       ),
                     ],
                   ),

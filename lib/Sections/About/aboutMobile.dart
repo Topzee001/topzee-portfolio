@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/components/components.dart';
 
 import '../../components/colors.dart';
+import 'skills.dart';
 
 class AboutMobile extends StatelessWidget {
   const AboutMobile({super.key});
@@ -55,14 +56,38 @@ class AboutMobile extends StatelessWidget {
             SizedBox(
               height: screenHeight * 0.015,
             ),
+            Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(color: Colors.grey.shade900, width: 2.0),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: screenHeight * 0.02,
+            ),
             Align(
-              alignment: Alignment.centerLeft,
+              alignment: Alignment.center,
               child: Text(
                 "Technologies I've worked with",
                 style: TextStyle(
                   fontSize: screenWidth * 0.05,
                 ),
               ),
+            ),
+            const Skills(),
+            SizedBox(
+              height: screenHeight * 0.02,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(color: Colors.grey.shade900, width: 2.0),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: screenHeight * 0.02,
             ),
           ],
         ));
