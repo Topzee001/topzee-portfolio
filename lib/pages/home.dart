@@ -88,14 +88,17 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_portfolio/Sections/portfolio/card.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_portfolio/Sections/portfolio/model.dart';
 import 'package:my_portfolio/components/components.dart';
 import 'package:my_portfolio/components/colors.dart';
 import 'package:my_portfolio/Sections/Home/main_mobile.dart';
 import '../Sections/About/aboutMobile.dart';
 import '../Sections/About/about_desktop.dart';
-import '../Sections/portfolio/protfolio_desktop.dart';
+// import '../Sections/portfolio/protfolio_desktop.dart';
+import '../Sections/portfolio/portfolio_desk.dart';
+import '../Sections/portfolio/widgets/project_card.dart';
 import '../components/size.dart';
 import '../widgets/desk_appbar.dart';
 import '../widgets/drawer_mobile.dart';
@@ -119,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final screenHeight = screenSize.height;
     return LayoutBuilder(
       builder: (context, constraints) {
-        final isNarrow = constraints.maxWidth < 1230;
+        //  final isNarrow = constraints.maxWidth < 1230;
         final isDesktop = constraints.maxWidth >= kMinDesktopWidth;
         return Scaffold(
           key: scaffoldKey,
@@ -140,80 +143,43 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      if (isDesktop)
-                        const MainDesktop()
-                      else
-                        const MainMobile(),
-                      //about section
-                      if (constraints.maxWidth >= kMedDesktopWidth)
-                        const AboutDesktop()
-                      else
-                        const AboutMobile(),
+                      //home
+                      // if (isDesktop)
+                      //   const MainDesktop()
+                      // else
+                      //   const MainMobile(),
+                      // //about section
+                      // if (constraints.maxWidth >= kMedDesktopWidth)
+                      //   const AboutDesktop()
+                      // else
+                      //   const AboutMobile(),
                       //projects
                       //const ProtfolioDesktop(),
-                      SizedBox(
+                      // const PortfolioDesk(),
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
                         // height: 500,
-                        width: double.infinity,
+                        width: screenWidth,
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: screenWidth * 0.06,
-                                  vertical: screenHeight * 0.02),
-                              child: const Column(
-                                children: [
-                                  CustomHeader(text: "Portfolio"),
-                                  CustomSubheader(
-                                    text:
-                                        'Few of my previous projects are below\n\n',
-                                    // fontSize: screenWidth < 1230
-                                    //     ? screenWidth * 0.015
-                                    //     : screenWidth * 0.04,
-                                  ),
-                                ],
+                            Text(
+                              "Projects done",
+                              style: TextStyle(
+                                fontSize: screenWidth < 1230
+                                    ? screenWidth * 0.02
+                                    : screenWidth * 0.015,
+                                color: CustomColor.whitePrmary,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
-                            SizedBox(
-                              height: screenWidth > 1200
-                                  ? screenHeight * 0.45
-                                  : screenWidth * 0.21,
-                              child: ListView.separated(
-                                itemBuilder: (context, index) {
-                                  return;
-                                },
-                                separatorBuilder: (context, index) {
-                                  return VerticalDivider(
-                                    color: Colors.transparent,
-                                    width: screenWidth * 0.015,
-                                  );
-                                },
-                                itemCount: personalProjectUtils.length,
-                              ),
-                            ),
+
+                            //project card
+                            ProjectCardWidget(
+                              project: personalProjectUtils.first,
+                            )
                           ],
                         ),
                       ),
-                      // SizedBox(
-                      //   // height: 500,
-                      //   width: double.infinity,
-                      //   child: Column(
-                      //     children: [
-                      //       SizedBox(
-                      //         height: screenHeight * 0.02,
-                      //       ),
-                      //       Text(
-                      //         "Projects",
-                      //         style: TextStyle(
-                      //           fontSize: screenWidth < 1230
-                      //               ? screenWidth * 0.02
-                      //               : screenWidth * 0.015,
-                      //         ),
-                      //       ),
-                      //     ],
-                      //   ),
-
-                      // ),
                       //contacts
                       Container(
                         height: 500,

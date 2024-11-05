@@ -23,7 +23,8 @@ List<ProjectUtils> personalProjectUtils = [
     image: 'assets/projects/shoes.png',
     title: 'AG-Topzee',
     subtitle:
-        'AG-Topzee is a mobile shoes store application that provides a seamless shoe shopping experience, allowing users to browse products, add items to their cart, complete purchases, and view their order history.',
+        // 'AG-Topzee is a mobile shoes store application that provides a seamless shoe shopping experience, allowing users to browse products, add items to their cart, complete purchases, and view their order history.',
+        'AG-Topzee is a mobile shoes store application that provides a seamless shoe shopping experience.',
     githubLink: 'https://github.com/Topzee001/sneakers',
   ),
   ProjectUtils(

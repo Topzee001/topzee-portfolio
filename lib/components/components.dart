@@ -20,15 +20,15 @@ class CustomHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(Icons.remove),
+        const Icon(Icons.remove),
         Text(
           text.toUpperCase(),
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.w400,
             letterSpacing: 1.0,
           ),
         ),
-        Icon(Icons.remove),
+        const Icon(Icons.remove),
       ],
     );
   }
@@ -41,7 +41,7 @@ class CustomSubheader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Wrap(
       children: [
         Text(
           text,

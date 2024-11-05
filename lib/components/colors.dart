@@ -21,3 +21,4 @@ const Color kLightBackground = Color(0xFFFFFFFF);
 const kLightWhite = Color(0xFFe6f1ff);
 const Color darKLightNavy = Color(0xFF112240);
 Color kFooter = Colors.grey.shade900;
+Color yellowSecondary = Colors.yellow.shade900;

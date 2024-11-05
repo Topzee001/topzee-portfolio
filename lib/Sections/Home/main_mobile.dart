@@ -50,7 +50,7 @@ class MainMobile extends StatelessWidget {
                   color: CustomColor.whitePrmary,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 "Ibrahim Temitope",
                 style: TextStyle(
@@ -61,12 +61,12 @@ class MainMobile extends StatelessWidget {
                   color: CustomColor.whitePrmary,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.phone_android),
-                  SizedBox(
+                  const Icon(Icons.phone_android),
+                  const SizedBox(
                     width: 10,
                   ),
                   Text(
@@ -81,7 +81,7 @@ class MainMobile extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 "With extensive experience in Mobile development, building apps that follows the best practice to deliver over the top user experience. Open to working on products that will eat the world",
                 textAlign: TextAlign.center,
