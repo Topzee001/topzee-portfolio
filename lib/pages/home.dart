@@ -98,6 +98,7 @@ import '../Sections/About/aboutMobile.dart';
 import '../Sections/About/about_desktop.dart';
 // import '../Sections/portfolio/protfolio_desktop.dart';
 import '../Sections/portfolio/portfolio_desk.dart';
+import '../Sections/portfolio/protfolio_desktop.dart';
 import '../Sections/portfolio/widgets/project_card.dart';
 import '../components/size.dart';
 import '../widgets/desk_appbar.dart';
@@ -144,42 +145,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Column(
                     children: [
                       //home
-                      // if (isDesktop)
-                      //   const MainDesktop()
-                      // else
-                      //   const MainMobile(),
-                      // //about section
-                      // if (constraints.maxWidth >= kMedDesktopWidth)
-                      //   const AboutDesktop()
-                      // else
-                      //   const AboutMobile(),
-                      //projects
-                      //const ProtfolioDesktop(),
-                      // const PortfolioDesk(),
-                      Container(
-                        padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                        // height: 500,
-                        width: screenWidth,
-                        child: Column(
-                          children: [
-                            Text(
-                              "Projects done",
-                              style: TextStyle(
-                                fontSize: screenWidth < 1230
-                                    ? screenWidth * 0.02
-                                    : screenWidth * 0.015,
-                                color: CustomColor.whitePrmary,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+                      if (isDesktop)
+                        const MainDesktop()
+                      else
+                        const MainMobile(),
 
-                            //project card
-                            ProjectCardWidget(
-                              project: personalProjectUtils.first,
-                            )
-                          ],
-                        ),
-                      ),
+                      //about section
+                      if (constraints.maxWidth >= kMedDesktopWidth)
+                        const AboutDesktop()
+                      else
+                        const AboutMobile(),
+
+                      //projects
+                      const ProtfolioDesktop(),
+                      // const PortfolioDesk(),
+
                       //contacts
                       Container(
                         height: 500,

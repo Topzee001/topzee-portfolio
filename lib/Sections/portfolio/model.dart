@@ -31,14 +31,16 @@ List<ProjectUtils> personalProjectUtils = [
     image: 'assets/projects/quickMenu.png',
     title: 'QuickMenu',
     subtitle:
-        'Quick Menu is a restaurant menu mobile app that transform the dinning experience by using NFC technology to provide customers with instant access to restaurants menus. By placing NFC tags on individual tables, users can simply tap their smartphones on the tag to view detailed and up-to-date menu information. This app enhances convenience, improves accuracy and offers a modern solution for both customers and restaurants admin.',
+        // 'Quick Menu is a restaurant menu mobile app that transform the dinning experience by using NFC technology to provide customers with instant access to restaurants menus. By placing NFC tags on individual tables, users can simply tap their smartphones on the tag to view detailed and up-to-date menu information. This app enhances convenience, improves accuracy and offers a modern solution for both customers and restaurants admin.',
+        'Quick Menu is a restaurant menu mobile app that transform the dinning experience by using NFC technology to provide customers with instant access to restaurants menus.',
     githubLink: 'https://github.com/Topzee001/quick_menu',
   ),
   ProjectUtils(
     image: 'assets/projects/watches.png',
     title: 'Watchee',
     subtitle:
-        'Watchee is a watch store application that provides a seamless luxury watches shopping experience, allowing users to browse products, add items to their cart, complete purchases, and view their order history.',
+        // 'Watchee is a watch store application that provides a seamless luxury watches shopping experience, allowing users to browse products, add items to their cart, complete purchases, and view their order history.',
+        'Watchee is a watch store application that provides a seamless luxury watches shopping experience, allowing users to browse products, add items to their cart and complete purchases',
     githubLink: 'https://github.com/Topzee001/watch-store-using-timbu-Api',
   )
 ];
