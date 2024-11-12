@@ -97,8 +97,10 @@ import 'package:my_portfolio/Sections/Home/main_mobile.dart';
 import '../Sections/About/aboutMobile.dart';
 import '../Sections/About/about_desktop.dart';
 // import '../Sections/portfolio/protfolio_desktop.dart';
+import '../Sections/desktop_contact.dart';
 import '../Sections/portfolio/portfolio_desk.dart';
 import '../Sections/portfolio/protfolio_desktop.dart';
+import '../Sections/portfolio/widgets/custom_testfield.dart';
 import '../Sections/portfolio/widgets/project_card.dart';
 import '../components/size.dart';
 import '../widgets/desk_appbar.dart';
@@ -145,28 +147,24 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Column(
                     children: [
                       //home
-                      if (isDesktop)
-                        const MainDesktop()
-                      else
-                        const MainMobile(),
+                      // if (isDesktop)
+                      //   const MainDesktop()
+                      // else
+                      //   const MainMobile(),
 
-                      //about section
-                      if (constraints.maxWidth >= kMedDesktopWidth)
-                        const AboutDesktop()
-                      else
-                        const AboutMobile(),
+                      // //about section
+                      // if (constraints.maxWidth >= kMedDesktopWidth)
+                      //   const AboutDesktop()
+                      // else
+                      //   const AboutMobile(),
 
-                      //projects
-                      const ProtfolioDesktop(),
-                      // const PortfolioDesk(),
+                      // //projects
+                      // const ProtfolioDesktop(),
+
+                      // // const PortfolioDesk(),
 
                       //contacts
-                      Container(
-                        height: 500,
-                        width: double.infinity,
-                        color: CustomColor.bgLight1,
-                        child: const Center(child: Text('Contacts Section')),
-                      ),
+                      DesktopContact(),
                       //footer
                       const SizedBox(
                         height: 500,
