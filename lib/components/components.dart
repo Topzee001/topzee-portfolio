@@ -61,8 +61,9 @@ class SocialMediaIconBtn extends StatelessWidget {
   final double? height;
   final double horizontalPadding;
 
-  SocialMediaIconBtn(
-      {required this.icon,
+  const SocialMediaIconBtn(
+      {super.key,
+      required this.icon,
       required this.socialLink,
       this.height,
       required this.horizontalPadding});

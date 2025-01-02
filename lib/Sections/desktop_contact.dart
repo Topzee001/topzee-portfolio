@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/Sections/portfolio/widgets/custom_testfield.dart';
 import 'package:my_portfolio/components/size.dart';
-
+import 'package:my_portfolio/components/sns_links.dart';
+import 'dart:js' as js;
 import '../components/colors.dart';
 
 class DesktopContact extends StatelessWidget {
@@ -12,6 +13,7 @@ class DesktopContact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
       color: CustomColor.bgLight1,
       child: Column(
@@ -27,15 +29,19 @@ class DesktopContact extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
+          // buildFieldDesktop(),
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 700, maxHeight: 100),
-            child: LayoutBuilder(builder: (context, constrainnts) {
-              if (constrainnts.maxHeight >= kMinDesktopWidth) {
-                return buildFieldDesktop();
-              }
-              //else
-              return buildFieldMobile();
-            }),
+            child: LayoutBuilder(
+              builder: (context, constrainnts) {
+                if (constrainnts.maxWidth >= kMinDesktopWidth) {
+                  return buildFieldDesktop();
+                }
+                //else
+                // return Container();
+                return buildFieldMobile();
+              },
+            ),
           ),
           const SizedBox(
             height: 15,
@@ -47,7 +53,7 @@ class DesktopContact extends StatelessWidget {
             child: const CustomTextfield(
               // controller: ,
               hintText: "Your message",
-              maxLine: 20,
+              maxLine: 14,
             ),
           ),
           //send button
@@ -85,24 +91,33 @@ class DesktopContact extends StatelessWidget {
             alignment: WrapAlignment.center,
             children: [
               InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    js.context.callMethod('open', [SnsLinks.github]);
+                  },
                   child: Image.asset('assets/github.png', width: 28)),
               InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    js.context.callMethod('open', [SnsLinks.linkedin]);
+                  },
                   child: Image.asset('assets/linkedin.png', width: 28)),
-              InkWell(
-                  onTap: () {},
-                  child: Image.asset('assets/telegram.png', width: 28)),
-              InkWell(
-                  onTap: () {},
-                  child: Image.asset('assets/instagram.png', width: 28)),
+              // InkWell(
+              //     onTap: () {
+              //       // js.context.callMethod('open', [SnsLinks.github]);
+              //     },
+              //     child: Image.asset('assets/telegram.png', width: 28)),
               // InkWell(
               //     onTap: () {},
-              //     child: Image.asset(
-              //       'assets/twitter.png',
-              //       width: 28,
-              //       height: 25,
-              //     )),
+              //     child: Image.asset('assets/instagram.png', width: 28)),
+              InkWell(
+                  onTap: () {
+                    js.context.callMethod('open', [SnsLinks.twitter]);
+                  },
+                  child: Image.asset(
+                    'assets/twitter2.png',
+                    width: 28,
+                    height: 25,
+                    color: Colors.white,
+                  )),
             ],
           )
         ],

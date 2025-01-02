@@ -1,112 +1,20 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter/rendering.dart';
-// import 'package:flutter/widgets.dart';
-// //import 'package:google_fonts/google_fonts.dart';
-// import 'package:my_portfolio/constants/colors.dart';
-// //import 'package:my_portfolio/constants/nav_items.dart';
-// import 'package:my_portfolio/widgets/main_mobile.dart';
-// // import 'package:my_portfolio/widgets/logo.dart';
-
-// // import '../constants/Nav_items.dart';
-// // import '../styles/style.dart';
-// // import '../widgets/desk_appbar.dart';
-// import '../constants/size.dart';
-// import '../widgets/desk_appbar.dart';
-// import '../widgets/drawer_mobile.dart';
-// import '../widgets/main_desktop.dart';
-// import '../widgets/mobile_appbar.dart';
-
-// class MyHomePage extends StatefulWidget {
-//   const MyHomePage({super.key});
-
-//   @override
-//   State<MyHomePage> createState() => _MyHomePageState();
-// }
-
-// class _MyHomePageState extends State<MyHomePage> {
-//   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-//   @override
-//   Widget build(BuildContext context) {
-//     // final screenSize = MediaQuery.of(context).size;
-//     // final screenWidth = screenSize.width;
-//     // final screenHeight = screenSize.height;
-
-//     return LayoutBuilder(builder: (context, Constraints) {
-//       return Scaffold(
-//           key: scaffoldKey,
-//           backgroundColor: CustomColor.scaffoldBg,
-//           drawer: Constraints.maxWidth >= kMinDesktopWidth
-//               ? null
-//               : const MyDrawer(),
-//           body: ListView(
-//             scrollDirection: Axis.vertical,
-//             children: [
-//               //main
-//               if (Constraints.maxWidth >= kMinDesktopWidth)
-//                 const MyDeskbar()
-//               else
-//                 MymobileBar(
-//                   onMenuTap: () {
-//                     scaffoldKey.currentState?.openDrawer();
-//                   },
-//                   onLogoTap: () {},
-//                 ),
-//               if (Constraints.maxWidth >= kMinDesktopWidth)
-//                 const MainDesktop()
-//               else
-//                 const MainMobile(),
-
-//               //skills
-//               Container(
-//                 height: 500,
-//                 width: double.maxFinite,
-//                 color: Colors.blueGrey,
-//               ),
-//               //projects
-//               Container(
-//                 height: 500,
-//                 width: double.maxFinite,
-//                 //color: Colors.blueGrey,
-//               ),
-//               //contacts
-//               Container(
-//                 height: 500,
-//                 width: double.maxFinite,
-//                 color: Colors.blueGrey,
-//               ),
-//               //footer
-//               Container(
-//                 height: 500,
-//                 width: double.maxFinite,
-//                 // color: Colors.blueGrey,
-//               )
-//             ],
-//           ));
-//     });
-//   }
-// }
-
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/Sections/portfolio/card.dart';
+import 'package:my_portfolio/Sections/footer/footer.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
-import 'package:my_portfolio/Sections/portfolio/model.dart';
-import 'package:my_portfolio/components/components.dart';
 import 'package:my_portfolio/components/colors.dart';
 import 'package:my_portfolio/Sections/Home/main_mobile.dart';
+import 'package:my_portfolio/components/sns_links.dart';
 import '../Sections/About/aboutMobile.dart';
 import '../Sections/About/about_desktop.dart';
 // import '../Sections/portfolio/protfolio_desktop.dart';
 import '../Sections/desktop_contact.dart';
-import '../Sections/portfolio/portfolio_desk.dart';
 import '../Sections/portfolio/protfolio_desktop.dart';
-import '../Sections/portfolio/widgets/custom_testfield.dart';
-import '../Sections/portfolio/widgets/project_card.dart';
 import '../components/size.dart';
 import '../widgets/desk_appbar.dart';
 import '../widgets/drawer_mobile.dart';
 import '../Sections/Home/main_desktop.dart';
 import '../widgets/mobile_appbar.dart';
+import 'dart:js' as js;
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -117,12 +25,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final scrollController = ScrollController();
+  final List<GlobalKey> navbarKeys = List.generate(4, (index) => GlobalKey());
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    final screenWidth = screenSize.width;
-    final screenHeight = screenSize.height;
     return LayoutBuilder(
       builder: (context, constraints) {
         //  final isNarrow = constraints.maxWidth < 1230;
@@ -130,11 +37,23 @@ class _MyHomePageState extends State<MyHomePage> {
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: CustomColor.scaffoldBg,
-          drawer: isDesktop ? null : const MyDrawer(),
+          drawer: isDesktop
+              ? null
+              : MyDrawer(
+                  onNavItemTap: (int navIndex) {
+                    // call function
+                    scaffoldKey.currentState?.closeDrawer();
+                    scrollToSection(navIndex);
+                  },
+                ),
           body: Column(
             children: [
+              // SizedBox(key: navbarKeys.first),
               if (isDesktop)
-                const MyDeskbar()
+                MyDeskbar(onNavMenuTap: (int navIndex) {
+                  //call fxn for jump
+                  scrollToSection(navIndex);
+                })
               else
                 MymobileBar(
                   onMenuTap: () {
@@ -144,33 +63,33 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               Expanded(
                 child: SingleChildScrollView(
+                  controller: scrollController,
+                  scrollDirection: Axis.vertical,
                   child: Column(
+                    // mainAxisSize: MainAxisSize.min,
                     children: [
+                      // SizedBox(key: navbarKeys.first),
                       //home
-                      // if (isDesktop)
-                      //   const MainDesktop()
-                      // else
-                      //   const MainMobile(),
+                      if (isDesktop)
+                        MainDesktop(key: navbarKeys.first)
+                      else
+                        MainMobile(key: navbarKeys[0]),
 
-                      // //about section
-                      // if (constraints.maxWidth >= kMedDesktopWidth)
-                      //   const AboutDesktop()
-                      // else
-                      //   const AboutMobile(),
+                      //about section
+                      if (constraints.maxWidth >= kMedDesktopWidth)
+                        AboutDesktop(key: navbarKeys[1])
+                      else
+                        AboutMobile(key: navbarKeys[1]),
 
-                      // //projects
-                      // const ProtfolioDesktop(),
+                      //projects
+                      ProtfolioDesktop(key: navbarKeys[2]),
 
-                      // // const PortfolioDesk(),
+                      // const PortfolioDesk(),
 
                       //contacts
-                      DesktopContact(),
+                      DesktopContact(key: navbarKeys[3]),
                       //footer
-                      const SizedBox(
-                        height: 500,
-                        width: double.infinity,
-                        child: Center(child: Text('Footer Section')),
-                      ),
+                      const Footer(),
                     ],
                   ),
                 ),
@@ -179,6 +98,20 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         );
       },
+    );
+  }
+
+  void scrollToSection(int navIndex) {
+    if (navIndex == 4) {
+      //open resume page
+      js.context.callMethod('open', [SnsLinks.resume]);
+      return;
+    }
+    final key = navbarKeys[navIndex];
+    Scrollable.ensureVisible(
+      key.currentContext!,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
     );
   }
 }

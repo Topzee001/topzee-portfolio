@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../components/colors.dart';
-import '../../components/components.dart';
-import '../../components/tooltech.dart';
 
 class MainMobile extends StatelessWidget {
   const MainMobile({super.key});
@@ -28,6 +26,7 @@ class MainMobile extends StatelessWidget {
               borderRadius: BorderRadius.circular(screenHeight * 0.15),
               child: Image.asset(
                 "assets/emote.jpeg",
+                fit: BoxFit.cover,
                 height:
                     screenWidth < 700 ? screenHeight * 0.3 : screenHeight * 0.3,
               ),

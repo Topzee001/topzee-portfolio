@@ -4,7 +4,9 @@ import '../components/colors.dart';
 import '../components/nav_items.dart';
 
 class MyDrawer extends StatelessWidget {
-  const MyDrawer({super.key});
+  const MyDrawer({super.key, required this.onNavItemTap});
+
+  final Function(int) onNavItemTap;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,9 @@ class MyDrawer extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 fontSize: 16,
               ),
-              onTap: () {},
+              onTap: () {
+                onNavItemTap(i);
+              },
               leading: Icon(navIcons[i]),
               title: Text(headTitle[i]),
             )

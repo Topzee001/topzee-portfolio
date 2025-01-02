@@ -8,10 +8,10 @@ class AdaptiveText extends StatelessWidget {
 
   const AdaptiveText(
     this.text, {
-    Key? key,
+    super.key,
     required this.style,
     required this.textAlign,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

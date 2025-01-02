@@ -7,8 +7,8 @@ import '../styles/style.dart';
 import 'logo.dart';
 
 class MyDeskbar extends StatelessWidget {
-  const MyDeskbar({super.key});
-
+  const MyDeskbar({super.key, required this.onNavMenuTap});
+  final Function(int) onNavMenuTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,7 +26,9 @@ class MyDeskbar extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 8.0),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  onNavMenuTap(i);
+                },
                 child: Text(
                   headTitle[i],
                   style: const TextStyle(
