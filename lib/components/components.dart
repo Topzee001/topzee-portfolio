@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'colors.dart';
 import 'tooltech.dart';
 
 const List<Map> technologies = [
@@ -20,15 +21,22 @@ class CustomHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Icon(Icons.remove),
+        const Icon(
+          Icons.remove,
+          color: CustomColor.greenPrimary,
+        ),
         Text(
           text.toUpperCase(),
           style: const TextStyle(
+            color: CustomColor.greenPrimary,
             fontWeight: FontWeight.w400,
             letterSpacing: 1.0,
           ),
         ),
-        const Icon(Icons.remove),
+        const Icon(
+          Icons.remove,
+          color: CustomColor.greenPrimary,
+        ),
       ],
     );
   }

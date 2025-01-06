@@ -17,20 +17,23 @@ class AboutMobile extends StatelessWidget {
           horizontal: screenWidth * 0.05,
         ),
         child: Column(
+          // mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const CustomHeader(
               text: 'About',
             ),
-            const CustomSubheader(
+            CustomSubheader(
               text: 'Get to know me',
+              fontSize: screenWidth * 0.04,
             ),
             SizedBox(
               height: screenHeight * 0.03,
             ),
             Text(
-                "Hi! My name is Ibrahim, popularly called Topzee, but you can call me Temitope. I'm a senior mobile developer with over 1+ years of IT experience. I have worked on several mobile solutions ranging from ISP Company App, restaurant NFC technology solution, to e-commerce and beyond.",
+                "My name is Ibrahim, popularly called Topzee. I'm a Flutter mobile developer with over 1+ years of IT experience. I have worked on several mobile solutions ranging from ISP Company App, restaurant NFC technology solution, to e-commerce and beyond.",
                 style: TextStyle(
-                  fontSize: screenHeight * 0.02,
+                  fontSize: screenHeight * 0.022,
                   fontWeight: FontWeight.w400,
                 )),
             SizedBox(
@@ -40,7 +43,7 @@ class AboutMobile extends StatelessWidget {
               "Currently, I am the lead Mobile Developer at Estream Networks. I specialize in front-end development and make it my mission to translate user-focused designs into pixel-perfect applications. i'm always passionate about creating, learning, exploring which helps to contribute to my skill and focus on growth.",
               style: TextStyle(
                 fontWeight: FontWeight.w400,
-                fontSize: screenHeight * 0.02,
+                fontSize: screenHeight * 0.022,
               ),
             ),
             SizedBox(
@@ -49,12 +52,12 @@ class AboutMobile extends StatelessWidget {
             Text(
               "In 2023, I graduated from the University of Ilorin with B.Eng Electrical and Electronics with major in Computer and Controls. \n\nI spend my free time playing chess, video games or watching animes and i also do watch football matches on weekends.",
               style: TextStyle(
-                fontSize: screenHeight * 0.02,
+                fontSize: screenHeight * 0.022,
                 fontWeight: FontWeight.w400,
               ),
             ),
             SizedBox(
-              height: screenHeight * 0.015,
+              height: screenHeight * 0.025,
             ),
             Container(
               decoration: BoxDecoration(

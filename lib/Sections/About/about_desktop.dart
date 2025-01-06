@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_portfolio/components/components.dart';
+import 'package:my_portfolio/components/sns_links.dart';
 
 import '../../components/colors.dart';
 import 'skills.dart';
+import 'dart:js' as js;
 
 class AboutDesktop extends StatelessWidget {
   const AboutDesktop({super.key});
@@ -31,7 +33,8 @@ class AboutDesktop extends StatelessWidget {
         vertical: 10,
       ),
       //height: 500,
-      width: double.infinity,
+      // width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.06),
       color: CustomColor.bgLight1,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -39,13 +42,14 @@ class AboutDesktop extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const CustomHeader(
-              text: 'About',
+              text: 'About Me',
             ),
-            const CustomSubheader(
+            CustomSubheader(
               text: 'Get to know me',
+              fontSize: screenWidth * 0.02,
             ),
             //profile section
-            const SizedBox(height: 24),
+            const SizedBox(height: 30),
 
             LayoutBuilder(
               builder: (context, constraints) {
@@ -69,6 +73,9 @@ class AboutDesktop extends StatelessWidget {
                       child: Image.asset(
                         'assets/ibro.jpeg',
                         fit: BoxFit.cover,
+                        // fit:
+                        //     screenWidth < 1230 ? BoxFit.fitWidth : BoxFit.cover,
+                        // height: screenWidth < 1230 ? null : screenHeight * 0.5,
                       ),
                     ),
                     //TODO: change width to adaptive and image too
@@ -78,56 +85,60 @@ class AboutDesktop extends StatelessWidget {
 
                     //profile texts
                     Expanded(
-                        flex: screenWidth < 1230 ? 2 : 1,
-                        child: Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              //TODO: create adaptive text widget
-                              Text(
-                                "Hi! My name is Ibrahim, popularly called Topzee, but you can call me Temitope. I'm a senior mobile developer with over 1+ years of IT experience. I have worked on several mobile solutions ranging from ISP Company App, restaurant NFC technology solution, to e-commerce and beyond.",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: screenWidth < 1230
-                                      ? screenWidth * 0.02
-                                      : screenWidth * 0.015,
-                                ),
+                      flex: screenWidth < 1230 ? 2 : 1,
+                      child: Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            //TODO: create adaptive text widget
+                            Text(
+                              "My name is Ibrahim, popularly called Topzee, but you can call me Temitope. I'm a senior mobile developer with over 1+ years of IT experience. I have worked on several mobile solutions ranging from ISP Company App, restaurant NFC technology solution, to e-commerce and beyond.",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: screenWidth < 1230
+                                    ? screenWidth * 0.02
+                                    : screenWidth * 0.015,
                               ),
-                              SizedBox(
-                                height: screenHeight * 0.02,
+                            ),
+                            SizedBox(
+                              height: screenHeight * 0.02,
+                            ),
+                            Text(
+                              "Currently, I am the lead Mobile Developer at Estream Networks. I specialize in front-end development and make it my mission to translate user-focused designs into pixel-perfect applications. i'm always passionate about creating, learning, exploring which helps to contribute to my skill and focus on growth.",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: screenWidth < 1230
+                                    ? screenWidth * 0.02
+                                    : screenWidth * 0.015,
                               ),
-                              Text(
-                                "Currently, I am the lead Mobile Developer at Estream Networks. I specialize in front-end development and make it my mission to translate user-focused designs into pixel-perfect applications. i'm always passionate about creating, learning, exploring which helps to contribute to my skill and focus on growth.",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: screenWidth < 1230
-                                      ? screenWidth * 0.02
-                                      : screenWidth * 0.015,
-                                ),
+                            ),
+                            SizedBox(
+                              height: screenHeight * 0.02,
+                            ),
+                            Text(
+                              "In 2023, I graduated from the University of Ilorin with B.Eng Electrical and Electronics with major in Computer and Controls. \n\nI spend my free time playing chess, video games or watching animes and i also do watch football matches on weekends.",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: screenWidth < 1230
+                                    ? screenWidth * 0.02
+                                    : screenWidth * 0.015,
                               ),
-                              SizedBox(
-                                height: screenHeight * 0.02,
-                              ),
-                              Text(
-                                "In 2023, I graduated from the University of Ilorin with B.Eng Electrical and Electronics with major in Computer and Controls. \n\nI spend my free time playing chess, video games or watching animes and i also do watch football matches on weekends.",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: screenWidth < 1230
-                                      ? screenWidth * 0.02
-                                      : screenWidth * 0.015,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ))
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
                   ],
                 );
               },
             ),
-            const SizedBox(
-              height: 30,
+            // const SizedBox(
+            //   height: 30,
+            // ),
+            SizedBox(
+              height: screenHeight * 0.025,
             ),
-            //technologies used section
+            // //technologies used section
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -136,7 +147,7 @@ class AboutDesktop extends StatelessWidget {
                   decoration: BoxDecoration(
                     border: Border(
                       bottom:
-                          BorderSide(color: Colors.grey.shade900, width: 2.0),
+                          BorderSide(color: Colors.grey.shade900, width: 1.0),
                     ),
                   ),
                 ),
@@ -144,8 +155,9 @@ class AboutDesktop extends StatelessWidget {
                   height: screenHeight * 0.02,
                 ),
                 Text(
-                  "Technologies I've worked with",
+                  "Technologies I have worked with:",
                   style: TextStyle(
+                    // color: CustomColor.greenPrimary,
                     fontSize: screenWidth < 1230
                         ? screenWidth * 0.02
                         : screenWidth * 0.015,
@@ -155,6 +167,9 @@ class AboutDesktop extends StatelessWidget {
                   height: 10,
                 ),
                 const Skills(),
+                // SizedBox(
+                //   height: screenHeight * 0.02,
+                // ),
                 SizedBox(
                   height: screenHeight * 0.02,
                 ),
@@ -162,12 +177,37 @@ class AboutDesktop extends StatelessWidget {
                   decoration: BoxDecoration(
                     border: Border(
                       bottom:
-                          BorderSide(color: Colors.grey.shade900, width: 2.0),
+                          BorderSide(color: Colors.grey.shade900, width: 1.0),
                     ),
                   ),
                 ),
               ],
-            )
+            ),
+            //container
+            SizedBox(
+              height: screenHeight * 0.025,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      height: 40.0,
+                      width: 150,
+                      child: TextButton(
+                          onPressed: () {
+                            js.context.callMethod('open', [SnsLinks.linkedin]);
+                          },
+                          child: Text(
+                            "Resume",
+                          )),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

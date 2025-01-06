@@ -47,6 +47,13 @@ class Skills extends StatelessWidget {
                 ),
                 avatar: getImage(technologies[i]["img"]),
                 backgroundColor: CustomColor.bgLight2,
+                shape: const StadiumBorder(
+                    // side: BorderSide(
+                    //   color: CustomColor
+                    //       .greenPrimary, // Replace with your desired border color
+                    //   // width: 1.0, // Set the border width
+                    // ),
+                    ),
               )
           ],
         ),
