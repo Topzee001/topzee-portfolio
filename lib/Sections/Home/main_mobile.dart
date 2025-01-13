@@ -15,11 +15,11 @@ class MainMobile extends StatelessWidget {
     final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
+      // margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
       height: screenHeight,
       constraints: const BoxConstraints(minHeight: 560.0),
       child: Column(
-        //   mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CircleAvatar(
             radius: screenHeight * 0.15,
@@ -102,13 +102,13 @@ class MainMobile extends StatelessWidget {
                         TypewriterAnimatedText(
                           'Mobile Developer',
                           textStyle: TextStyle(
-                            fontSize: screenWidth * 0.03,
+                            fontSize: screenHeight * 0.03,
                             fontWeight: FontWeight.w500,
                           ),
                           speed: const Duration(milliseconds: 50),
                         ),
                       ],
-                      // totalRepeatCount: 4,
+                      totalRepeatCount: 10,
                       isRepeatingAnimation: true,
                       pause: const Duration(milliseconds: 1000),
                       displayFullTextOnTap: true,
@@ -140,7 +140,8 @@ class MainMobile extends StatelessWidget {
             height: screenHeight * 0.035,
           ),
           SizedBox(
-            width: 300,
+            width: 150,
+            height: 40,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: CustomColor.greenPrimary,

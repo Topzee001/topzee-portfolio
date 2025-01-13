@@ -5,8 +5,8 @@ import '../../components/colors.dart';
 import 'model.dart';
 import 'widgets/project_card.dart';
 
-class ProtfolioDesktop extends StatelessWidget {
-  const ProtfolioDesktop({super.key});
+class ProtfolioMobile extends StatelessWidget {
+  const ProtfolioMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +15,9 @@ class ProtfolioDesktop extends StatelessWidget {
     final screenHeight = screenSize.height;
     return Container(
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+      // padding: EdgeInsets.symmetric(
+      //   horizontal: screenWidth * 0.05,
+      // ),
       // height: 500,
       width: screenWidth,
       child: Column(
@@ -22,17 +25,15 @@ class ProtfolioDesktop extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: screenWidth * 0.06, vertical: screenHeight * 0.02),
-            child: const Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Center(child: CustomSectionHeading1(text: "Portfolio")),
-                  Center(
-                    child: CustomSectionSubHeading(
-                        text: "Here are few samples of my previous work \n"),
-                  ),
-                ],
-              ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomSectionHeading(text: "Portfolio"),
+                CustomSectionSubHeading(
+                  text: "Here are few samples of my previous work \n",
+                  fontSize: screenWidth * 0.04,
+                ),
+              ],
             ),
           ),
 

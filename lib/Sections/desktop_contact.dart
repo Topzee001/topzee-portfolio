@@ -12,6 +12,7 @@ class DesktopContact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),

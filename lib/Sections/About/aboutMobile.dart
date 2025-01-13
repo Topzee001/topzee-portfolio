@@ -13,9 +13,7 @@ class AboutMobile extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     return Container(
         color: CustomColor.bgLight1,
-        padding: EdgeInsets.symmetric(
-          horizontal: screenWidth * 0.05,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.09),
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,10 +57,13 @@ class AboutMobile extends StatelessWidget {
             SizedBox(
               height: screenHeight * 0.025,
             ),
-            Container(
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(color: Colors.grey.shade900, width: 2.0),
+            Center(
+              child: Container(
+                width: 400,
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(color: Colors.grey.shade800, width: 2.0),
+                  ),
                 ),
               ),
             ),
@@ -82,10 +83,13 @@ class AboutMobile extends StatelessWidget {
             SizedBox(
               height: screenHeight * 0.02,
             ),
-            Container(
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(color: Colors.grey.shade900, width: 2.0),
+            Center(
+              child: Container(
+                width: 400,
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(color: Colors.grey.shade800, width: 2.0),
+                  ),
                 ),
               ),
             ),

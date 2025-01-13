@@ -5,6 +5,7 @@ class SnsLinks {
   static const String github = "https://github.com/Topzee001";
   static const String medium = "https://medium.com/@ibrahimtemitope";
   static const String resume = "https://medium.com/@ibrahimtemitope";
+  static const String portfolioGithub = "https://medium.com/@ibrahimtemitope";
 }
 
 

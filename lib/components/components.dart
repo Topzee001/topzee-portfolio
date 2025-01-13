@@ -93,3 +93,97 @@ class SocialMediaIconBtn extends StatelessWidget {
     );
   }
 }
+
+class CustomSectionHeading extends StatelessWidget {
+  final String? text;
+
+  const CustomSectionHeading({super.key, this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    // final _themeProvider = Provider.of<ThemeProvider>(context);
+    return Row(
+      // mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Icon(
+          Icons.remove,
+          color: CustomColor.greenPrimary,
+          // color: _themeProvider.lightTheme ? kPrimaryLightColor : kPrimaryColor,
+        ),
+        Text(
+          text!.toUpperCase(),
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            letterSpacing: 1.0,
+            color: CustomColor.greenPrimary,
+            // color:
+            //     _themeProvider.lightTheme ? kPrimaryLightColor : kPrimaryColor,
+          ),
+        ),
+        Icon(
+          Icons.remove,
+          color: CustomColor.greenPrimary,
+          // color: _themeProvider.lightTheme ? kPrimaryLightColor : kPrimaryColor,
+        ),
+      ],
+    );
+  }
+}
+
+class CustomSectionHeading1 extends StatelessWidget {
+  final String? text;
+
+  const CustomSectionHeading1({super.key, this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    // final _themeProvider = Provider.of<ThemeProvider>(context);
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Icon(
+          Icons.remove,
+          color: CustomColor.greenPrimary,
+          // color: _themeProvider.lightTheme ? kPrimaryLightColor : kPrimaryColor,
+        ),
+        Text(
+          text!.toUpperCase(),
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            letterSpacing: 1.0,
+            color: CustomColor.greenPrimary,
+            // color:
+            //     _themeProvider.lightTheme ? kPrimaryLightColor : kPrimaryColor,
+          ),
+        ),
+        Icon(
+          Icons.remove,
+          color: CustomColor.greenPrimary,
+          // color: _themeProvider.lightTheme ? kPrimaryLightColor : kPrimaryColor,
+        ),
+      ],
+    );
+  }
+}
+
+class CustomSectionSubHeading extends StatelessWidget {
+  final String text;
+  final double? fontSize;
+
+  const CustomSectionSubHeading({super.key, required this.text, this.fontSize});
+
+  @override
+  Widget build(BuildContext context) {
+    // final _themeProvider = Provider.of<ThemeProvider>(context);
+    return Text(
+      text,
+      style: TextStyle(
+        fontSize: fontSize ?? MediaQuery.of(context).size.height * 0.04,
+        fontWeight: FontWeight.w400,
+        // color: _themeProvider.lightTheme ? Colors.black : Colors.white,
+      ),
+    );
+  }
+}

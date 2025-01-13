@@ -8,6 +8,7 @@ import '../Sections/About/aboutMobile.dart';
 import '../Sections/About/about_desktop.dart';
 // import '../Sections/portfolio/protfolio_desktop.dart';
 import '../Sections/desktop_contact.dart';
+import '../Sections/portfolio/portfolio_mobile.dart';
 import '../Sections/portfolio/protfolio_desktop.dart';
 import '../components/size.dart';
 import '../widgets/desk_appbar.dart';
@@ -82,7 +83,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         AboutMobile(key: navbarKeys[1]),
 
                       //projects
-                      ProtfolioDesktop(key: navbarKeys[2]),
+                      isDesktop
+                          ? ProtfolioDesktop(key: navbarKeys[2])
+                          :
+                          // else
+                          ProtfolioMobile(key: navbarKeys[2]),
 
                       // const PortfolioDesk(),
 

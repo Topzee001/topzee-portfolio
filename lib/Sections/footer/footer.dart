@@ -1,27 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/components/colors.dart';
 
+import '../../components/sns_links.dart';
+import 'dart:js' as js;
+
 class Footer extends StatelessWidget {
   const Footer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
+    return SizedBox(
       width: double.maxFinite,
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 20.0),
+        padding: const EdgeInsets.symmetric(vertical: 20.0),
         child: Column(
           children: [
-            Text('C  2024 by Ibrahim Temitope Sakariyah'),
-            SizedBox(
+            Text("© ${DateTime.now().year}  by Ibrahim Temitope Sakariyah"),
+            const SizedBox(
               height: 30,
             ),
-            Text(
-              'Developed with Flutter ',
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                color: CustomColor.whiteSecondary,
-              ),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Text(
+                  'Developed in 💙 with ',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    color: CustomColor.whiteSecondary,
+                  ),
+                ),
+                InkWell(
+                  onTap: () =>
+                      js.context.callMethod('open', [SnsLinks.portfolioGithub]),
+                  child: const Text(
+                    "Flutter",
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

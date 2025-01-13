@@ -19,7 +19,7 @@ class MainDesktop extends StatelessWidget {
       builder: (context, constraints) {
         return ConstrainedBox(
           constraints: BoxConstraints(
-            minHeight: 600, // Adjust this value as needed
+            minHeight: screenHeight - 50,
             maxHeight: constraints.maxHeight,
           ),
           child: Padding(
@@ -110,7 +110,7 @@ class MainDesktop extends StatelessWidget {
                                 speed: const Duration(milliseconds: 50),
                               ),
                             ],
-                            // totalRepeatCount: 4,
+                            totalRepeatCount: 10,
                             isRepeatingAnimation: true,
                             pause: const Duration(milliseconds: 1000),
                             displayFullTextOnTap: true,
