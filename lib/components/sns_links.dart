@@ -4,7 +4,8 @@ class SnsLinks {
       "https://linkedin.com/in/ibrahim-sakariyah-071380183";
   static const String github = "https://github.com/Topzee001";
   static const String medium = "https://medium.com/@ibrahimtemitope";
-  static const String resume = "https://medium.com/@ibrahimtemitope";
+  static const String resume =
+      "https://drive.google.com/file/d/1UTJ1kyxRB8_1eHJszCmIOeZATUQuTykY/view?usp=sharing";
   static const String portfolioGithub = "https://medium.com/@ibrahimtemitope";
 }
 

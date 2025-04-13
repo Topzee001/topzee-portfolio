@@ -29,7 +29,10 @@ class AboutMobile extends StatelessWidget {
               height: screenHeight * 0.03,
             ),
             Text(
-                "My name is Ibrahim, popularly called Topzee. I'm a Flutter mobile developer with over 1+ years of IT experience. I have worked on several mobile solutions ranging from ISP Company App, restaurant NFC technology solution, to e-commerce and beyond.",
+                // "My name is Ibrahim, popularly called Topzee. I'm a Flutter mobile developer with over 4+ years of IT experience. I have worked on several mobile solutions ranging from ISP Company App, restaurant NFC technology solution, to e-commerce and beyond.",
+                // "Ibrahim Temitope is a software engineer specializing in mobile and backend development. He is passionate about building scalable software solutions that improve business efficiency. He has developed an ERP system currently in use at Estream Networks, streamlining operations and improving workflow for engineers and staff.",
+                // "Ibrahim Temitope is a mobile engineer who specializes in building solutions using flutter framework. He is passionate about building scalable software solutions that improve business efficiency. He has developed an ERP system currently in use at Estream Networks, streamlining operations and improving workflow for engineers and staff.",
+                "Ibrahim Temitope (Topzee) is a Mobile Developer at Estream Networks, where he is the sole engineer building and scaling a robust ERP application that streamlines core company operations. From field service to internal workflows. He is passionate about solving real-world problems with elegant mobile solutions and is currently expanding the app with the support of a dedicated designer, making it more user-centric and scalable.",
                 style: TextStyle(
                   fontSize: screenHeight * 0.022,
                   fontWeight: FontWeight.w400,
@@ -38,7 +41,9 @@ class AboutMobile extends StatelessWidget {
               height: screenHeight * 0.02,
             ),
             Text(
-              "Currently, I am the lead Mobile Developer at Estream Networks. I specialize in front-end development and make it my mission to translate user-focused designs into pixel-perfect applications. i'm always passionate about creating, learning, exploring which helps to contribute to my skill and focus on growth.",
+              // "Currently, I am the lead Mobile Developer at Estream Networks. I specialize in front-end development and make it my mission to translate user-focused designs into pixel-perfect applications. i'm always passionate about creating, learning, exploring which helps to contribute to my skill and focus on growth.",
+              "He is a 2x finalist of the prestigious fast paced HNG Internship, where he contributed to impactful projects like an eCommerce boilerplate app and Telex, a fully shipped MVP that demonstrates his ability to collaborate, lead, and deliver under pressure. He also built a cutting-edge NFC restaurant app, showcasing his versatility and drive for innovation.",
+
               style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: screenHeight * 0.022,
@@ -48,7 +53,8 @@ class AboutMobile extends StatelessWidget {
               height: screenHeight * 0.02,
             ),
             Text(
-              "In 2023, I graduated from the University of Ilorin with B.Eng Electrical and Electronics with major in Computer and Controls. \n\nI spend my free time playing chess, video games or watching animes and i also do watch football matches on weekends.",
+              // "In 2023, I graduated from the University of Ilorin with B.Eng Electrical and Electronics with major in Computer and Controls. \n\nI spend my free time playing chess, video games or watching animes and i also do watch football matches on weekends.",
+              "Temitope holds a B.Eng in Electrical and Electronics Engineering (Computer and Controls focus) from the University of Ilorin, where he graduated in 2023. He aspires to become a globally impactful engineer, building products that make life easier, smarter, and more connected across the world.",
               style: TextStyle(
                 fontSize: screenHeight * 0.022,
                 fontWeight: FontWeight.w400,
