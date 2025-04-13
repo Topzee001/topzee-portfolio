@@ -106,14 +106,14 @@ class CustomSectionHeading extends StatelessWidget {
       // mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Icon(
+        const Icon(
           Icons.remove,
           color: CustomColor.greenPrimary,
           // color: _themeProvider.lightTheme ? kPrimaryLightColor : kPrimaryColor,
         ),
         Text(
           text!.toUpperCase(),
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.w400,
             letterSpacing: 1.0,
             color: CustomColor.greenPrimary,
@@ -121,7 +121,7 @@ class CustomSectionHeading extends StatelessWidget {
             //     _themeProvider.lightTheme ? kPrimaryLightColor : kPrimaryColor,
           ),
         ),
-        Icon(
+        const Icon(
           Icons.remove,
           color: CustomColor.greenPrimary,
           // color: _themeProvider.lightTheme ? kPrimaryLightColor : kPrimaryColor,
@@ -143,14 +143,14 @@ class CustomSectionHeading1 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Icon(
+        const Icon(
           Icons.remove,
           color: CustomColor.greenPrimary,
           // color: _themeProvider.lightTheme ? kPrimaryLightColor : kPrimaryColor,
         ),
         Text(
           text!.toUpperCase(),
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.w400,
             letterSpacing: 1.0,
             color: CustomColor.greenPrimary,
@@ -158,7 +158,7 @@ class CustomSectionHeading1 extends StatelessWidget {
             //     _themeProvider.lightTheme ? kPrimaryLightColor : kPrimaryColor,
           ),
         ),
-        Icon(
+        const Icon(
           Icons.remove,
           color: CustomColor.greenPrimary,
           // color: _themeProvider.lightTheme ? kPrimaryLightColor : kPrimaryColor,

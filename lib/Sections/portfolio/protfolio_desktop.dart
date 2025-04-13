@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/components/components.dart';
 
-import '../../components/colors.dart';
 import 'model.dart';
 import 'widgets/project_card.dart';
 

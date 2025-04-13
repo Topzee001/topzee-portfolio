@@ -28,7 +28,7 @@ class ProtfolioMobile extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomSectionHeading(text: "Portfolio"),
+                const CustomSectionHeading(text: "Portfolio"),
                 CustomSectionSubHeading(
                   text: "Here are few samples of my previous work \n",
                   fontSize: screenWidth * 0.04,

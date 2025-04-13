@@ -200,7 +200,7 @@ class AboutDesktop extends StatelessWidget {
                           onPressed: () {
                             js.context.callMethod('open', [SnsLinks.linkedin]);
                           },
-                          child: Text(
+                          child: const Text(
                             "Resume",
                           )),
                     ),
