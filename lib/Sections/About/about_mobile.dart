@@ -76,13 +76,33 @@ class AboutMobile extends StatelessWidget {
             SizedBox(
               height: screenHeight * 0.02,
             ),
+            // Align(
+            //   alignment: Alignment.center,
+            //   child: Row(
+            //     children: [
+            //       const Icon(
+            //         Icons.remove,
+            //         color: CustomColor.greenPrimary,
+            //       ),
+            //       Text(
+            //         "Technologies I've worked with",
+            //         style: TextStyle(
+            //           color: CustomColor.greenPrimary,
+            //           fontSize: screenWidth * 0.05,
+            //         ),
+            //       ),
+            //       const Icon(
+            //         Icons.remove,
+            //         color: CustomColor.greenPrimary,
+            //       ),
+            //     ],
+            //   ),
+            // ),
             Align(
               alignment: Alignment.center,
-              child: Text(
-                "Technologies I've worked with",
-                style: TextStyle(
-                  fontSize: screenWidth * 0.05,
-                ),
+              child: CustomHeader(
+                text: 'Technologies I have worked with',
+                fontSize: screenWidth * 0.05,
               ),
             ),
             const Skills(),

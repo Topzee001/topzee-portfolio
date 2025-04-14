@@ -161,13 +161,37 @@ class AboutDesktop extends StatelessWidget {
                 SizedBox(
                   height: screenHeight * 0.02,
                 ),
-                Text(
-                  "Technologies I have worked with:",
-                  style: TextStyle(
-                    // color: CustomColor.greenPrimary,
-                    fontSize: screenWidth < 1230
-                        ? screenWidth * 0.02
-                        : screenWidth * 0.015,
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     const Icon(
+                //       Icons.remove,
+                //       color: CustomColor.greenPrimary,
+                //     ),
+                //     Text(
+                //       "Technologies I have worked with",
+                //       style: TextStyle(
+                //         fontWeight: FontWeight.w400,
+
+                //         letterSpacing: 1.0,
+                //         color: CustomColor.greenPrimary,
+                //         // fontSize: screenWidth * 0.02,
+                //         fontSize: screenHeight * 0.04,
+                //         // fontSize: screenWidth < 1230
+                //         //     ? screenWidth * 0.02
+                //         //     : screenWidth * 0.015,
+                //       ),
+                //     ),
+                //     const Icon(
+                //       Icons.remove,
+                //       color: CustomColor.greenPrimary,
+                //     ),
+                //   ],
+                // ),
+                const Align(
+                  alignment: Alignment.center,
+                  child: CustomHeader(
+                    text: 'Technologies I have worked with',
                   ),
                 ),
                 const SizedBox(

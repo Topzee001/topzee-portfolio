@@ -14,8 +14,9 @@ const List<Map> technologies = [
 ];
 
 class CustomHeader extends StatelessWidget {
-  const CustomHeader({super.key, required this.text});
+  const CustomHeader({super.key, required this.text, this.fontSize});
   final String text;
+  final double? fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +28,11 @@ class CustomHeader extends StatelessWidget {
         ),
         Text(
           text.toUpperCase(),
-          style: const TextStyle(
+          style: TextStyle(
             color: CustomColor.greenPrimary,
             fontWeight: FontWeight.w400,
             letterSpacing: 1.0,
+            fontSize: fontSize,
           ),
         ),
         const Icon(
