@@ -188,10 +188,11 @@ class AboutDesktop extends StatelessWidget {
                 //     ),
                 //   ],
                 // ),
-                const Align(
-                  alignment: Alignment.center,
+                const Center(
+                  // alignment: Alignment.center,
                   child: CustomHeader(
                     text: 'Technologies I have worked with',
+                    center: true,
                   ),
                 ),
                 const SizedBox(

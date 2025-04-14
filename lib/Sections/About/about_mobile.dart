@@ -76,35 +76,35 @@ class AboutMobile extends StatelessWidget {
             SizedBox(
               height: screenHeight * 0.02,
             ),
-            // Align(
-            //   alignment: Alignment.center,
-            //   child: Row(
-            //     children: [
-            //       const Icon(
-            //         Icons.remove,
-            //         color: CustomColor.greenPrimary,
-            //       ),
-            //       Text(
-            //         "Technologies I've worked with",
-            //         style: TextStyle(
-            //           color: CustomColor.greenPrimary,
-            //           fontSize: screenWidth * 0.05,
-            //         ),
-            //       ),
-            //       const Icon(
-            //         Icons.remove,
-            //         color: CustomColor.greenPrimary,
-            //       ),
-            //     ],
-            //   ),
-            // ),
             Align(
               alignment: Alignment.center,
-              child: CustomHeader(
-                text: 'Technologies I have worked with',
-                fontSize: screenWidth * 0.05,
+              child: Row(
+                children: [
+                  const Icon(
+                    Icons.remove,
+                    color: CustomColor.greenPrimary,
+                  ),
+                  Text(
+                    "Technologies I've worked with",
+                    style: TextStyle(
+                      color: CustomColor.greenPrimary,
+                      fontSize: screenHeight * 0.04,
+                    ),
+                  ),
+                  const Icon(
+                    Icons.remove,
+                    color: CustomColor.greenPrimary,
+                  ),
+                ],
               ),
             ),
+            // Align(
+            //   alignment: Alignment.center,
+            //   child: CustomHeader(
+            //     text: 'Technologies I have worked with',
+            //     fontSize: screenHeight * 0.004,
+            //   ),
+            // ),
             const Skills(),
             SizedBox(
               height: screenHeight * 0.02,

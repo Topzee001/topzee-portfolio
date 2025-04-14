@@ -14,13 +14,15 @@ const List<Map> technologies = [
 ];
 
 class CustomHeader extends StatelessWidget {
-  const CustomHeader({super.key, required this.text, this.fontSize});
+  const CustomHeader(
+      {super.key, required this.text, this.fontSize, this.center = false});
+  final bool center;
   final String text;
   final double? fontSize;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    final headerRow = Row(
       children: [
         const Icon(
           Icons.remove,
@@ -41,6 +43,12 @@ class CustomHeader extends StatelessWidget {
         ),
       ],
     );
+
+    return center
+        ? Center(
+            child: headerRow,
+          )
+        : headerRow;
   }
 }
 

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/Sections/About/about_mobile.dart';
 import 'package:my_portfolio/Sections/footer/footer.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_portfolio/components/colors.dart';
 import 'package:my_portfolio/Sections/Home/main_mobile.dart';
 import 'package:my_portfolio/components/sns_links.dart';
-import '../Sections/About/aboutMobile.dart';
 import '../Sections/About/about_desktop.dart';
 // import '../Sections/portfolio/protfolio_desktop.dart';
 import '../Sections/desktop_contact.dart';
