@@ -22,7 +22,8 @@ class CustomHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final headerRow = Row(
+    // final headerRow =
+    return Row(
       children: [
         const Icon(
           Icons.remove,
@@ -44,11 +45,11 @@ class CustomHeader extends StatelessWidget {
       ],
     );
 
-    return center
-        ? Center(
-            child: headerRow,
-          )
-        : headerRow;
+    // return center
+    //     ? Center(
+    //         child: headerRow,
+    //       )
+    //     : headerRow;
   }
 }
 
