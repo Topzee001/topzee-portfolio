@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_portfolio/Sections/portfolio/widgets/custom_testfield.dart';
 import 'package:my_portfolio/components/size.dart';
 import 'package:my_portfolio/components/sns_links.dart';
+import 'package:my_portfolio/model/contact_model.dart';
+import 'package:my_portfolio/provider/contact_provider.dart';
 import 'dart:js' as js;
 import '../components/colors.dart';
 
-class DesktopContact extends StatelessWidget {
+class DesktopContact extends ConsumerStatefulWidget {
   const DesktopContact({
     super.key,
   });
 
+  @override
+  ConsumerState<DesktopContact> createState() => _DesktopContactState();
+}
+
+class _DesktopContactState extends ConsumerState<DesktopContact> {
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController messageController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     // double screenWidth = MediaQuery.of(context).size.width;
@@ -51,8 +62,8 @@ class DesktopContact extends StatelessWidget {
             constraints: const BoxConstraints(
               maxWidth: 700,
             ),
-            child: const CustomTextfield(
-              // controller: ,
+            child: CustomTextfield(
+              controller: messageController,
               hintText: "Your message",
               maxLine: 14,
             ),
@@ -68,7 +79,7 @@ class DesktopContact extends StatelessWidget {
             child: SizedBox(
               width: double.maxFinite,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: _submitForm,
                 child: const Text('Get in touch'),
               ),
             ),
@@ -125,48 +136,75 @@ class DesktopContact extends StatelessWidget {
       ),
     );
   }
-}
 
-Row buildFieldDesktop() {
-  return const Row(
-    children: [
-      Flexible(
-        child: CustomTextfield(
-          // controller: ,
-          hintText: "Your name",
+  Row buildFieldDesktop() {
+    return Row(
+      children: [
+        Flexible(
+          child: CustomTextfield(
+            controller: nameController,
+            hintText: "Your name",
+          ),
         ),
-      ),
-      SizedBox(
-        width: 15,
-      ),
-      Flexible(
-        child: CustomTextfield(
-          // controller: ,
-          hintText: "Your email",
+        const SizedBox(
+          width: 15,
         ),
-      ),
-    ],
-  );
-}
+        Flexible(
+          child: CustomTextfield(
+            controller: emailController,
+            hintText: "Your email",
+          ),
+        ),
+      ],
+    );
+  }
 
-Column buildFieldMobile() {
-  return const Column(
-    children: [
-      Flexible(
-        child: CustomTextfield(
-          // controller: ,
-          hintText: "Your name",
+  Column buildFieldMobile() {
+    return Column(
+      children: [
+        Flexible(
+          child: CustomTextfield(
+            controller: nameController,
+            hintText: "Your name",
+          ),
         ),
-      ),
-      SizedBox(
-        height: 15,
-      ),
-      Flexible(
-        child: CustomTextfield(
-          // controller: ,
-          hintText: "Your email",
+        const SizedBox(
+          height: 15,
         ),
-      ),
-    ],
-  );
+        Flexible(
+          child: CustomTextfield(
+            controller: emailController,
+            hintText: "Your email",
+          ),
+        ),
+      ],
+    );
+  }
+
+  void _submitForm() {
+    final formState = ref.watch(contactFormProvider);
+    final name = nameController.text.trim();
+    final email = emailController.text.trim();
+    final message = messageController.text.trim();
+
+    if (name.isEmpty || email.isEmpty || message.isEmpty) {
+      // Show an error message or handle the error
+      return;
+    }
+    final contact = ContactModel(
+      name: nameController.text,
+      email: emailController.text,
+      message: messageController.text,
+    );
+
+    ref.watch(contactFormProvider.notifier).sendMessage(contact.toJson());
+    // Create a contact model instance
+    // ContactModel contact = ContactModel(
+    //   name: name,
+    //   email: email,
+    //   message: message,
+    // );
+
+    // Send the contact data to the server or perform any other action
+  }
 }
