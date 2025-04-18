@@ -92,7 +92,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       // const PortfolioDesk(),
 
                       //contacts
-                      DesktopContact(key: navbarKeys[3]),
+                      // DesktopContact(key: navbarKeys[3]),
+                      ContactSection(key: navbarKeys[3]),
                       //footer
                       const Footer(),
                     ],
